@@ -26,6 +26,7 @@ in
 
     (import ./gui args)
     (import ./work.nix args)
+    (import ./tailscale.nix args)
     (import ./vms.nix args)
   ];
 
