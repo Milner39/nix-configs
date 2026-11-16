@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 } @ args:
 
@@ -17,4 +18,15 @@
   modules.gui.window-manager.sway.enable = true;
 
   # === Window Manager ===
+
+
+  # === Screen Locker ===
+
+  # The window manager modules bind Mod+L to `hyprlock`
+  environment.systemPackages = [ pkgs.hyprlock ];
+
+  # Let Hyprlock use PAM
+  security.pam.services.hyprlock = {};
+
+  # === Screen Locker ===
 }
